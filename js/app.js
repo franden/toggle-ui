@@ -21,16 +21,14 @@ class FeaturesView {
     
             console.debug("Features were retrieved: " + features);
     
-            let innerHtml = "<ul>";
+            let list = document.createElement('ul');
+            tabContent.appendChild(list)
+            
             features.forEach(function (singleFeature, index, array) {
-
-                let feature = new Feature()
-                feature.setName(singleFeature);
-                innerHtml += feature.getHtml();
+                let feature = new Feature(singleFeature, index)
+                feature.appendFeature(list);
             });
-            innerHtml += "<ul>";
     
-            tabContent.innerHTML = innerHtml;
         });     
 
         console.log("changeView end");
