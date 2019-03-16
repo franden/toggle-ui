@@ -19,12 +19,21 @@ export default class Feature {
             <a id="${this.id}" href="#">${this.name}</a>
                 
         `;
-
         list.appendChild(listItem);
+
         this.featureTag = document.querySelector("#" + this.id);
 
-        this.featureTag.onclick = _ => this.changeView();
+        this.featureTag.onclick = _ => this.showFeatureDetails(this.name);
 
 
+    }
+
+    showFeatureDetails(feature) {
+        let featuresDetail = document.querySelector("#featureDetail");
+        featuresDetail.setAttribute("style", "visibility:visible");
+        featuresDetail.setAttribute("class", "active");
+        
+        featuresDetail.innerHTML = feature;
+        featuresDetail.click();
     }
 }
