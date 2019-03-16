@@ -1,4 +1,4 @@
-export default class Feature {
+export default class FeatureListItemView {
 
     constructor(name, index) {
         this.name = name;
@@ -24,8 +24,6 @@ export default class Feature {
         this.featureTag = document.querySelector("#" + this.id);
 
         this.featureTag.onclick = _ => this.showFeatureDetails(this.name);
-
-
     }
 
     showFeatureDetails(feature) {
