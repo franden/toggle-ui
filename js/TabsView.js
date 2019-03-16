@@ -6,7 +6,7 @@ export default class TabsView {
         console.log("initialized");
 
         this.tabConetentFeaturesView = new TabConetentFeaturesView();
-        this.tabConetentFeaturesView.setEnableDetailsContentFn(this.enableDetailsContent)
+        this.tabConetentFeaturesView.setEnableDetailsContentFn(this.enableDetailsContent.bind(this))
         this.tabConetentDetailsView = new TabConetentDetailsView();
         this.enableFeaturesConetent();
     }  
@@ -19,13 +19,13 @@ export default class TabsView {
 
     onClickFetures() {
         this.tabConetentFeaturesView.enable()
-        TabsView.deactivateAllButtons();
+        this.deactivateAllButtons();
         this.featuresButton.setAttribute("class", "tablinks active");
     }
 
     enableDetailsContent(featureId) {
         
-        TabsView.deactivateAllButtons();
+        this.deactivateAllButtons();
         let featuresDetail = document.querySelector("#featureDetail");
         featuresDetail.setAttribute("style", "visibility:visible");
         featuresDetail.setAttribute("class", "tablinks active");
@@ -35,7 +35,7 @@ export default class TabsView {
         new TabConetentDetailsView().enable(featureId);    
     }   
 
-    static deactivateAllButtons() {
+    deactivateAllButtons() {
         let featuresButton = document.querySelector("#featuresButton")
         featuresButton.setAttribute("class", "tablinks");
 
