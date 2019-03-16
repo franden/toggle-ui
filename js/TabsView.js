@@ -23,16 +23,16 @@ export default class TabsView {
         this.featuresButton.setAttribute("class", "tablinks active");
     }
 
-    enableDetailsContent(featureId) {
+    enableDetailsContent(id, description) {
         
         this.deactivateAllButtons();
         let featuresDetail = document.querySelector("#featureDetail");
         featuresDetail.setAttribute("style", "visibility:visible");
         featuresDetail.setAttribute("class", "tablinks active");
         
-        featuresDetail.innerHTML = featureId;
+        featuresDetail.innerHTML = description;
 
-        new TabConetentDetailsView().enable(featureId);    
+        new TabConetentDetailsView().enable(id);    
     }   
 
     deactivateAllButtons() {
@@ -40,6 +40,7 @@ export default class TabsView {
         featuresButton.setAttribute("class", "tablinks");
 
         let featuresDetail = document.querySelector("#featureDetail");
+        featuresDetail.setAttribute("style", "visibility:hidden");
         featuresDetail.setAttribute("class", "tablinks");
     }
 }

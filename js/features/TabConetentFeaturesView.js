@@ -4,17 +4,13 @@ import FeatureListItemView from './FeatureListItemView.js';
 
 export default class TabConetentFeaturesView {
 
-    getHtmlElement() {
-        return document.querySelector("#tabContent")
-    }
-
     setEnableDetailsContentFn(enableDetailsContentFn) {
         this.enableDetailsContentFn = enableDetailsContentFn;
     }
 
 
     enable() {
-        this.tabContent = this.getHtmlElement();
+        this.tabContent = document.querySelector("#tabContent");
         this.tabContent.innerHTML = "";
 
         console.log("changeView called");
@@ -32,7 +28,7 @@ export default class TabConetentFeaturesView {
                 tabContent.appendChild(list)
 
                 features.forEach(function (singleFeature, index, array) {
-                    let feature = new FeatureListItemView(singleFeature, index, enableDetailsContentFn);
+                    let feature = new FeatureListItemView(singleFeature.id, singleFeature.description, index, enableDetailsContentFn);
                     feature.appendFeature(list);
                 });
             }

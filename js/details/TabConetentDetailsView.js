@@ -7,8 +7,8 @@ export default class TabConetentDetailsView {
           
         this.tabContent =  document.querySelector("#tabContent")
 
-        this.tabContent.innerHTML ="<p>details for feature ${featureId}";
-        /*
+        this.tabContent.innerHTML =`<p>details for feature ${featureId}`;
+        
         let featuresUrl = "http://localhost:3000/toggles/features/"+this.featureId;
 
         new DataFetscher().fetchJsonData(featuresUrl, (jsonResonse) => {
@@ -25,6 +25,6 @@ export default class TabConetentDetailsView {
             });
     
         });     
-        */
+        
     }
 }

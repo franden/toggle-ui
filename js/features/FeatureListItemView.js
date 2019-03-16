@@ -1,10 +1,11 @@
 export default class FeatureListItemView {
 
-    constructor(name, index, enableDetailsContentFn) {
-        this.name = name;
+    constructor(id, description, index, enableDetailsContentFn) {
+        this.id = id;
+        this.description = description;
         this.index = index;
 
-        this.id = "feature-" + index;
+        this.linkId = "feature-" + id;
 
         console.log(`feature was created ${this.id}`);
 
@@ -20,14 +21,14 @@ export default class FeatureListItemView {
         let listItem = document.createElement("li");
 
         listItem.innerHTML = `
-            <a id="${this.id}" href="#">${this.name}</a>
+            <a id="${this.linkId}" href="#">${this.id} - ${this.description}</a>
                 
         `;
         list.appendChild(listItem);
 
-        this.featureTag = document.querySelector("#" + this.id);
+        this.featureTag = document.querySelector("#" + this.linkId);
 
-        this.featureTag.onclick = _ => this.enableDetailsContentFn(this.name);
+        this.featureTag.onclick = _ => this.enableDetailsContentFn(this.id, this.description);
     }
   
 }
