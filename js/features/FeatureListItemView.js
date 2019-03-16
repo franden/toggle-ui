@@ -1,10 +1,14 @@
 export default class FeatureListItemView {
 
-    constructor(name, index) {
+    constructor(name, index, enableDetailsContentFn) {
         this.name = name;
         this.index = index;
 
         this.id = "feature-" + index;
+
+        console.log(`feature was created ${this.id}`);
+
+        this.enableDetailsContentFn = enableDetailsContentFn;
     }
 
     changeView() {
@@ -23,15 +27,7 @@ export default class FeatureListItemView {
 
         this.featureTag = document.querySelector("#" + this.id);
 
-        this.featureTag.onclick = _ => this.showFeatureDetails(this.name);
+        this.featureTag.onclick = _ => this.enableDetailsContentFn(this.name);
     }
-
-    showFeatureDetails(feature) {
-        let featuresDetail = document.querySelector("#featureDetail");
-        featuresDetail.setAttribute("style", "visibility:visible");
-        featuresDetail.setAttribute("class", "active");
-        
-        featuresDetail.innerHTML = feature;
-        featuresDetail.click();
-    }
+  
 }

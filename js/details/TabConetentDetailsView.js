@@ -3,15 +3,11 @@ import DataFetscher from './../control/DataFetscher.js';
 
 export default class TabConetentDetailsView {
 
-    constructor(featureId){
-        this.featureId = featureId;
-    }
-
-    enebale() {
+    enable(featureId) {
           
         this.tabContent =  document.querySelector("#tabContent")
 
-        this.tabContent.innerHTML ="<p>details for feature ${this.featureId}";
+        this.tabContent.innerHTML ="<p>details for feature ${featureId}";
         /*
         let featuresUrl = "http://localhost:3000/toggles/features/"+this.featureId;
 
