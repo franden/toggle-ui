@@ -12,8 +12,8 @@ export default class ActivationStrategy {
         enabledArray.forEach(element => console.log(`element: ${element}`));
 
         const markup = `
-        <ul>
-        <lh>${this.name}</lh>
+        <ul class="list">
+        <h3>${this.name}</h3>
             ${enabledArray.map(element =>
             `<li>${element}</li>`
         ).join('')}

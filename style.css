@@ -38,3 +38,20 @@
     border: 1px solid #ccc;
     border-top: none;
   } 
+
+  /* LIST */
+  .list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .list li {
+    padding: 10px;
+    border-bottom: 1px solid #dddddd;
+  }
+  .list li:last-child {
+    border: 0;
+  }
+  .list li:hover {
+    background-color: #fffbc3;
+  }

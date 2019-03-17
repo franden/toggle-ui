@@ -9,7 +9,7 @@ export default class TabConetentDetailsView {
 
             this.tabContent = document.querySelector("#tabContent")
 
-            this.tabContent.innerHTML = `<p>details for feature ${featureId}`;
+            this.tabContent.innerHTML = `<h2>Details for feature ${featureId}</h2>`;
 
             let url = "http://localhost:3000/toggles/features/" + featureId;
 
