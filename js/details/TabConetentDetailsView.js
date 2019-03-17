@@ -1,30 +1,32 @@
 
 import DataFetscher from './../control/DataFetscher.js';
+import ActivationStrategy from './ActivationStrategy.js';
 
 export default class TabConetentDetailsView {
 
     enable(featureId) {
-          
-        this.tabContent =  document.querySelector("#tabContent")
+        try {
 
-        this.tabContent.innerHTML =`<p>details for feature ${featureId}`;
-        
-        let featuresUrl = "http://localhost:3000/toggles/features/"+this.featureId;
+            this.tabContent = document.querySelector("#tabContent")
 
-        new DataFetscher().fetchJsonData(featuresUrl, (jsonResonse) => {
-            let features = jsonResonse;
-    
-            console.debug("Features were retrieved: " + features);
-    
-            let list = document.createElement('ul');
-            tabContent.appendChild(list)
-            
-            features.forEach(function (singleFeature, index, array) {
-                let feature = new FeatureListItemView(singleFeature, index)
-                feature.appendFeature(list);
+            this.tabContent.innerHTML = `<p>details for feature ${featureId}`;
+
+            let url = "http://localhost:3000/toggles/features/" + featureId;
+
+            new DataFetscher().fetchJsonData(url, (jsonResponse) => {
+                let activationStrategies = jsonResponse.activationStrategies;
+
+                activationStrategies.forEach(function (activationStrategy, index, array) {
+                    let view = new ActivationStrategy(activationStrategy.name, activationStrategy.enabled)
+                    view.append(tabContent);
+                });
+
             });
-    
-        });     
-        
+        }
+        catch (e) {
+            console.log(e);
+        }
+
+
     }
 }
