@@ -9,14 +9,14 @@ export default class ActivationStrategy {
         let enabledArray = this.enabledArray;
 
         const markup = `
-        <section class ='tile'>
-        <p>${this.name}</p>
+        <details class ='tile'>
+        <summary>${this.name}</summary>
             <ul class="list">            
                 ${enabledArray.map(element =>
             `<li>${element}</li>`
         ).join('')}
             </ul>
-        </section>
+        </details>
         `;
 
         parentNode.innerHTML += markup;
