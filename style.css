@@ -18,7 +18,7 @@
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
-    transition: 0.3s;
+    /* transition: 0.3s; */
   }
   
   /* Change background color of buttons on hover */
@@ -39,19 +39,32 @@
     border-top: none;
   } 
 
-  /* LIST */
-  .list {
-    list-style-type: none;
-    padding-left: 0;
-  }
+/* tile*/
+.tile  {
+  border: solid 1px; 
+  padding: 5px;
+  margin-bottom: 5px;
+}
 
-  .list li {
-    padding: 10px;
-    border-bottom: 1px solid #dddddd;
-  }
-  .list li:last-child {
-    border: 0;
-  }
-  .list li:hover {
-    background-color: #fffbc3;
-  }
+.tile p {
+  border-bottom: solid 1px; 
+  margin: 0px;
+  padding: 5px;
+}
+
+/* LIST */
+.list {
+  list-style-type: none;
+  padding-left: 0;  
+}
+
+.list li {
+  padding: 10px;
+  border-bottom: 1px solid #dddddd;
+}
+.list li:last-child {
+  border: 0;
+}
+.list li:hover {
+  background-color: #fffbc3;
+}

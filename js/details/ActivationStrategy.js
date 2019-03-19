@@ -5,23 +5,20 @@ export default class ActivationStrategy {
     }
 
     append(parentNode) {
-        let section = document.createElement("section");
+
         let enabledArray = this.enabledArray;
 
-        console.log(`enabledArray: ${enabledArray}`);
-        enabledArray.forEach(element => console.log(`element: ${element}`));
-
         const markup = `
-        <ul class="list">
-        <h3>${this.name}</h3>
-            ${enabledArray.map(element =>
+        <section class ='tile'>
+        <p>${this.name}</p>
+            <ul class="list">            
+                ${enabledArray.map(element =>
             `<li>${element}</li>`
         ).join('')}
-        </ul>
-
+            </ul>
+        </section>
         `;
 
-        section.innerHTML = markup;
-        parentNode.appendChild(section);
+        parentNode.innerHTML += markup;
     }
 }
