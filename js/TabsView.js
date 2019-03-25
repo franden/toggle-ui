@@ -20,7 +20,7 @@ export default class TabsView {
     onClickFetures() {
         this.tabConetentFeaturesView.enable()
         this.deactivateAllButtons();
-        this.featuresButton.setAttribute("class", "tablinks active");
+        this.featuresButton.setAttribute("class", "nav-link active");
     }
 
     enableDetailsContent(id, description) {
@@ -28,7 +28,7 @@ export default class TabsView {
         this.deactivateAllButtons();
         let featuresDetail = document.querySelector("#featureDetail");
         featuresDetail.setAttribute("style", "visibility:visible");
-        featuresDetail.setAttribute("class", "tablinks active");
+        featuresDetail.setAttribute("class", "nav-link active");
         
         featuresDetail.innerHTML = description;
 
@@ -36,11 +36,13 @@ export default class TabsView {
     }   
 
     deactivateAllButtons() {
+        
         let featuresButton = document.querySelector("#featuresButton")
-        featuresButton.setAttribute("class", "tablinks");
+        featuresButton.setAttribute("class", "nav-link");
 
         let featuresDetail = document.querySelector("#featureDetail");
         featuresDetail.setAttribute("style", "visibility:hidden");
-        featuresDetail.setAttribute("class", "tablinks");
+        featuresDetail.setAttribute("class", "nav-link");
+        
     }
 }

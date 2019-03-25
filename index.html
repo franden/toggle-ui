@@ -2,25 +2,45 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <header>
     <title>Feature Toggles</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--
+        <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    -->
 </header>
 
 <body>
 
-    <main id="maincontent">
+    <div class="container">
+        <header><p><h1>Feature admin console</h1></p></header>
         <!-- Tab links -->
-        <div class="tab">
+        <ul class="nav  nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" id="featuresButton" href="#">Features</a>
+            </li>
+            <li class="nav-item" id="featureDetail" style="visibility:hidden;">
+                <a class="nav-link" href="#">Detail</a>
+            </li>
+        </ul>
+        <!--
+        <ul  class="nav">
             <button id="featuresButton" class="tablinks">Features</button>
             <button id="featureDetail" class="tablinks" style="visibility:hidden;">Detail</button>
         </div>
+        -->
 
         <!-- Tab content -->
         <div id="tabContent"></div>
+    </div>
 
-    </main>
     <script src="js/app.js" type="module"></script>
 </body>
 

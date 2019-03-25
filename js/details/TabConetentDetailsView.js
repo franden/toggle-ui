@@ -1,6 +1,6 @@
 
 import DataFetscher from './../control/DataFetscher.js';
-import ActivationStrategy from './ActivationStrategy.js';
+import ActivationStrategy from './activation/ActivationStrategy.js';
 
 export default class TabConetentDetailsView {
 

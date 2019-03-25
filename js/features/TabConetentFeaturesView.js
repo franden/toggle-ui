@@ -25,8 +25,8 @@ export default class TabConetentFeaturesView {
                 console.debug("Features were retrieved: " + features);
                 let enableDetailsContentFn = this.enableDetailsContentFn;
                 let list = document.createElement('ul');
-                list.setAttribute("class", "list")
-                tabContent.appendChild(list)
+                list.setAttribute("class", "list-group");
+                tabContent.appendChild(list);
 
                 features.forEach(function (singleFeature, index, array) {
                     let feature = new FeatureListItemView(singleFeature.id, singleFeature.description, index, enableDetailsContentFn);

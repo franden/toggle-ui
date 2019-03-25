@@ -19,10 +19,9 @@ export default class FeatureListItemView {
     appendFeature(list) {
 
         let listItem = document.createElement("li");
-
+        listItem.setAttribute("class", "list-group-item");
         listItem.innerHTML = `
-            <a id="${this.linkId}" href="#">${this.id} - ${this.description}</a>
-                
+            <a id="${this.linkId}" href="#">${this.id} - ${this.description}</a>                
         `;
         list.appendChild(listItem);
 
